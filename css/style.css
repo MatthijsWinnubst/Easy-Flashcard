@@ -1,0 +1,513 @@
+
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/opensans/v13/xozscpT2726on7jbcb_pArO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 600;
+	src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(https://fonts.gstatic.com/s/opensans/v13/MTP_ySUJH_bn48VBG8sNSvK7CilmfWxxrK9x-rxmu1Q.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 700;
+	src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://fonts.gstatic.com/s/opensans/v13/k3k702ZOKiLJc3WVjuplzPK7CilmfWxxrK9x-rxmu1Q.woff) format('woff');
+}
+
+/* RESET */
+
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Easyflashcard */
+
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	font-size: 10px;
+	background: #fff;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.container {
+	min-height: 800px;
+	overflow: hidden;
+}
+
+body.card .footer {
+	display: none;
+}
+
+/* flipcard js */
+
+div.fc_card-container {
+	position: relative;
+	z-index: 99998;
+	-webkit-perspective: 1000px;
+	-moz-perspective: 1000px;
+	-o-perspective: 1000px;
+	-ms-perspective: 1000px;
+	perspective: 1000px;
+}
+
+.fc_card-container .fc_card {
+	
+	position: absolute;
+	-webkit-transition: -webkit-transform .5s;
+	-moz-transition: -moz-transform .5s;
+	-o-transition: -o-transform .5s;
+	-ms-transition: -o-transform .5s;
+	transition: transform .5s;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.fc_card-container .fc_card > div {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	z-index: 100;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-o-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.fc_card-container .fc_card[data-direction="top"] .fc_front,
+.fc_card-container .fc_card[data-direction="bottom"] .fc_front {
+	-webkit-transform: rotateX(0deg);
+	-moz-transform: rotateX(0deg);
+	-o-transform: rotateX(0deg);
+	-ms-transform: rotateX(0deg);
+	transform: rotateX(0deg);
+}
+
+.fc_card-container .fc_card[data-direction="right"] .fc_front,
+.fc_card-container .fc_card[data-direction="left"] .fc_front {
+	-webkit-transform: rotateY(0deg);
+	-moz-transform: rotateY(0deg);
+	-o-transform: rotateY(0deg);
+	-ms-transform: rotateY(0deg);
+	transform: rotateY(0deg);
+}
+
+.fc_card-container .fc_card[data-direction="top"] .fc_back,
+.fc_card-container .fc_card[data-direction="bottom"] .fc_back {
+	-webkit-transform: rotateX(180deg);
+	-moz-transform: rotateX(180deg);
+	-o-transform: rotateX(180deg);
+	-ms-transform: rotateX(180deg);
+	transform: rotateX(180deg);
+}
+
+.fc_card-container .fc_card[data-direction="right"] .fc_back,
+.fc_card-container .fc_card[data-direction="left"] .fc_back {
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+	-o-transform: rotateY(180deg);
+	-ms-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+}
+
+.fc_flipping-right {
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+	-o-transform: rotateY(180deg);
+	-ms-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+}
+
+.fc_flipping-left {
+	-webkit-transform: rotateY(-180deg);
+	-moz-transform: rotateY(-180deg);
+	-o-transform: rotateY(-180deg);
+	-ms-transform: rotateY(-180deg);
+	transform: rotateY(-180deg);
+}
+
+.fc_flipping-top {
+	-webkit-transform: rotateX(180deg);
+	-moz-transform: rotateX(180deg);
+	-o-transform: rotateX(180deg);
+	-ms-transform: rotateX(180deg);
+	transform: rotateX(180deg);
+}
+
+.fc_flipping-bottom {
+	-webkit-transform: rotateX(-180deg);
+	-moz-transform: rotateX(-180deg);
+	-o-transform: rotateX(-180deg);
+	-ms-transform: rotateX(-180deg);
+	transform: rotateX(-180deg);
+}
+
+.noCSS3Container {
+	-webkit-perspective: none !important;
+	-moz-perspective: none !important;
+	-o-perspective: none !important;
+	-ms-perspective: none !important;
+	perspective: none !important;
+}
+
+.noCSS3Card {
+	-webkit-transition: none !important;
+	-moz-transition: none !important;
+	-o-transition: none !important;
+	-ms-transition: none !important;
+	transition: none !important;
+	-webkit-transform-style: none !important;
+	-moz-transform-style: none !important;
+	-o-transform-style: none !important;
+	-ms-transform-style: none !important;
+	transform-style: none !important;
+}
+
+.noCSS3Sides {
+	-webkit-backface-visibility: visible !important;
+	-moz-backface-visibility: visible !important;
+	-o-backface-visibility: visible !important;
+	-ms-backface-visibility: visible !important;
+	backface-visibility: visible !important;
+	-webkit-transform: none !important;
+	-moz-transform: none !important;
+	-o-transform: none !important;
+	-ms-transform: none !important;
+	transform: none !important;
+}
+
+/* end flipcard js*/
+
+.fc_card {
+	width: 100%;
+	height: 100%;
+}
+
+.fc_card .fb {
+	background: #FEFDFB;
+	-webkit-box-shadow: 1px 1px 7px 0px rgba(0,0,0,0.5);
+	-moz-box-shadow: 1px 1px 7px 0px rgba(0,0,0,0.35);
+	box-shadow: 1px 1px 7px 0px rgba(0,0,0,0.35);
+	border-radius: 2px;
+	cursor: pointer;
+	display: table;
+}
+
+.fc_card .fb:hover:before {
+	opacity: 0.4;
+}
+
+.fc_card .fb.fc_back {
+	background: #FBF7F1;
+}
+
+.fc_card-container {
+	width: 500px;
+	height: 250px;
+	margin: 200px auto 100px auto;
+}
+
+.question,
+.answer {
+	font-weight: 700;
+	font-size: 40px;
+	line-height: 1.15em;
+	margin-top: 0;
+	display: block;
+	margin-left: 30px;
+	margin-right: 30px;
+}
+
+.fc_back .question {
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 1.2em;
+	color: #888;
+	position: absolute;
+	top: 0;
+	margin-left: 22px;
+	margin-top: 20px;
+	max-width: 80%;
+}
+
+.qena {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	padding: 0;
+	position: relative;
+}
+
+.navigation {
+	padding: 30px 30px;
+}
+
+button {
+	cursor: pointer;
+}
+
+.stright {
+	position: absolute;
+	right: -6.5em;
+	height: 100%;
+}
+
+.stleft {
+	position: absolute;
+	left: -6.5em;
+	height: 100%;
+}
+
+.status button {
+	border: none;
+	background: none;
+	display: inline-block;
+	font-family: FontAwesome;
+	line-height: 1em;
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-size: 28px;
+	padding: 0;
+	color: #999;
+	float: right;
+	clear: both;
+	padding: 10px;
+	opacity: 0.8;
+	margin: 0;
+	width: 2em;
+	height: 2em;
+	display: block;
+	text-align: center;
+}
+
+.status button.next,
+.status button.prev {
+	position: absolute;
+	left: 0;
+	bottom: 30px;
+	color: #999;
+	opacity: 0.7;
+	font-size: 26px;
+}
+
+.status button.right {
+	right: 0;
+}
+
+.status button.right {
+	color: #3ed332;
+}
+
+.status button.wrong {
+	color: #fe7e00;
+}
+
+.status button:hover {
+	opacity: 1.0;
+}
+
+.speakme {
+	width: 2em;
+	height: 2em;
+	display: block;
+	text-align: center;
+	font-family: FontAwesome;
+	line-height: 2em;
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-size: 28px;
+	position: absolute;
+	right: 10px;
+	top: 1px;
+	color: #999;
+	opacity: 0.7;
+	z-index: 1000;
+}
+
+.speakme:hover {
+	opacity: 1.0;
+}
+
+
+
+/*==========  Non-Mobile First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+
+div.fc_card-container {
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+div.fc_card-container {
+}
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+
+div.fc_card-container {
+	width: 85%;
+}
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+
+div.fc_card-container {
+}
+}
+
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width : 320px) {
+}
